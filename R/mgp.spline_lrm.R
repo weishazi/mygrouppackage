@@ -31,7 +31,11 @@ mgp.spline_lrm <- function(y = y,
   }
 
   # 设置样条结点
-  spline <- data[, x] %>% quantile(spline, na.rm = T) %>% as.numeric() %>% paste(collapse = ",")
+  if(length(spline) == 1) {
+    spline <- spline
+  } else {
+    spline <- data[, x] %>% quantile(spline, na.rm = T) %>% as.numeric() %>% paste(collapse = ",")
+  }
 
   # 变量名反引号，解决不规范列名
   y <- paste0("`", y, "`")
@@ -40,14 +44,14 @@ mgp.spline_lrm <- function(y = y,
 
   # 构建公式
   if (is.null(covariable)) {
-    formula <- paste0(y, "~ rcs(", x, ", knots = c(", spline, "))") %>% formula()
+    formula <- paste0(y, "~ rcs(", x, ", parms = c(", spline, "))") %>% formula()
   } else {
-    formula <- paste0(y, "~ rcs(", x, ", knots = c(", spline, "))+",
+    formula <- paste0(y, "~ rcs(", x, ", parms = c(", spline, "))+",
                       paste0(covariable, collapse = "+")) %>% formula()
   }
 
   # 分析
-  fit <- lrm(formula, data = data)
+  fit <- rms::lrm(formula, data = data)
 
   return(fit)
 

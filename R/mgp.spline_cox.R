@@ -33,7 +33,11 @@ mgp.spline_cox <- function(y = y,
   }
 
   # 设置样条结点
-  spline <- data[, x] %>% quantile(spline, na.rm = T) %>% as.numeric() %>% paste(collapse = ",")
+  if(length(spline) == 1) {
+    spline <- spline
+  } else {
+    spline <- data[, x] %>% quantile(spline, na.rm = T) %>% as.numeric() %>% paste(collapse = ",")
+  }
 
   #
   f_Surv <- Surv(data[, time_var], data[, y] == levels(data[, y])[1])
@@ -46,15 +50,15 @@ mgp.spline_cox <- function(y = y,
 
   # 构建公式
   if (is.null(covariable)) {
-    formula <- paste0("f_Surv", "~ rcs(", x, ", knots = c(", spline, "))") %>% formula()
+    formula <- paste0("f_Surv", "~ rcs(", x, ", parms = c(", spline, "))") %>% formula()
   } else {
     # f_Surv <- Surv(data[, time_var], data[, y] == levels(data[, y])[1])
-    formula <- paste0("f_Surv", "~ rcs(", x, ", knots = c(", spline, "))+",
+    formula <- paste0("f_Surv", "~ rcs(", x, ", parms = c(", spline, "))+",
                       paste0(covariable, collapse = "+")) %>% formula()
   }
 
   #
-  fit <- cph(formula, data = data)
+  fit <- rms::cph(formula, data = data)
 
   return(fit)
 
