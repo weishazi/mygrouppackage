@@ -13,7 +13,7 @@
 mgp.pcor <- function(x = x,
                      y = y,
                      cov = NULL,
-                     df = df,
+                     data = data,
                      method = c("pearson", "kendall", "spearman")) {
   # 加载包
   # library(ppcor)
@@ -21,7 +21,7 @@ mgp.pcor <- function(x = x,
   if (is.null(cov)) {
     # 相关分析
     # 整理数据
-    df_temp <- df %>% dplyr::select(c(x, y)) %>% tidyr::drop_na()
+    df_temp <- data %>% dplyr::select(c(x, y)) %>% tidyr::drop_na()
     n <- dim(df_temp)[1]
 
     # 计算相关性

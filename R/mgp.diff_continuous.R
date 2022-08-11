@@ -38,7 +38,7 @@ mgp.diff_continuous <- function(data = data,
 
   df_measure2 <- purrr::map(variables, function(x) {
     purrr::map(levels, function(y) {
-      df_measure %>% slice(which(df_measure[, group] == y)) %>% dplyr::select(contains(x)) %>% as.numeric()
+      df_measure %>% dplyr::slice(which(df_measure[, group] == y)) %>% dplyr::select(contains(x)) %>% as.numeric()
 
     }) %>% purrr::reduce(., c)
 
@@ -46,7 +46,7 @@ mgp.diff_continuous <- function(data = data,
 
   index <- c("n", "mean", "sd", "median", "Q25", "Q75")
   colnames(df_measure2) <- paste0(rep(index, length(levels)), "_", rep(levels, each = length(index)))
-  df_measure2 <- df_measure2 %>% mutate(vars = variables) %>% select(vars, everything())
+  df_measure2 <- df_measure2 %>% mutate(vars = variables) %>% dplyr::select(vars, everything())
 
   # 假设检验
   if(length(levels) == 2) {

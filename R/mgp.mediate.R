@@ -13,7 +13,7 @@
 #' @return med.list
 #' @export
 #'
-#' @examples
+#' @examples setRefClass("PS",fields = list(m="character", x="character",med.f="formula",out.f="formula"));/t para_set <- new("PS")
 
 # setRefClass("PS",fields = list(m="character", x="character",med.f="formula",out.f="formula"))
 # para_set <- new("PS")
@@ -82,10 +82,7 @@ mgp.mediate <- function(x = x,
   }
 
   ## 中介分析
-  if(boot) {
-    set.seed(123)
-  }
-  med.fit <- mediate(model.m = med.model2,
+  med.fit <- mediation::mediate(model.m = med.model2,
                      model.y = out.model2,
                      treat = para_set$x,
                      mediator =  para_set$m,

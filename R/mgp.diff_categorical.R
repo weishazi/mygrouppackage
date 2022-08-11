@@ -4,7 +4,7 @@
 #' @param variables a character string indicating the categorical variables.
 #' @param group a character string indicating the grouping variable.
 #' @param prop a number 1 or 2.
-#' @param correct a logical value. Default is "TURE". Is the chi-square test corrected?
+#' @param correct a logical value. Default is "F". Is the chi-square test corrected?
 #'
 #' @return a data.frame object df_result
 #' @export
@@ -14,7 +14,7 @@ mgp.diff_categorical <- function(data = data,
                                variables = variables,
                                group = group,
                                prop = c(1, 2),
-                               correct = T) {
+                               correct = F) {
   # 判断变量是否是因子型
   if (!isTRUE(purrr::map(data[, c(variables, group)], is.factor) %>% unlist() %>% unique())) {
     data <- data %>% mutate(across(c(variables, group), as.factor))

@@ -10,7 +10,7 @@
 #' @return fit
 #' @export
 #'
-#' @examples
+#' @examples ddist<-datadist(df_yili_g);/n options(datadist="ddist")
 mgp.spline_cox <- function(y = y,
                           x = x,
                           covariable = NULL,
