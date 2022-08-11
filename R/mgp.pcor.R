@@ -32,8 +32,7 @@ mgp.pcor <- function(x = x,
     # 结果整理
     df_temp <- data.frame(xvar = x, yvar = y, n = n,
                           cor= df_cor$estimate, p.value= df_cor$p.value) %>%
-      mutate(fdr = p.adjust(p.value, method = "fdr", n = length(p.value)),
-             Method = method)
+      mutate(Method = method)
 
   } else {
     # 偏相关分析
@@ -48,8 +47,7 @@ mgp.pcor <- function(x = x,
                                 method = method)
 
     # 结果整理
-    df_temp <- df_temp %>% mutate(fdr = p.adjust(p.value, method = "fdr", n = length(p.value)),
-                                  xvar = x, yvar = y, n = n, covar = paste(cov, collapse = "+")) %>%
+    df_temp <- df_temp %>% mutate(xvar = x, yvar = y, n = n, covar = paste(cov, collapse = "+")) %>%
       dplyr::select(xvar, yvar, n, everything())
 
   }
