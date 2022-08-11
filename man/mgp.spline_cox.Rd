@@ -32,3 +32,7 @@ fit
 \description{
 Restricted cubic spline for cox
 }
+\examples{
+ddist<-datadist(data)
+options(datadist="ddist")
+}

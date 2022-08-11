@@ -10,6 +10,8 @@
 #' @export
 #'
 #' @examples
+#' ddist<-datadist(data)
+#' options(datadist="ddist")
 mgp.spline_lrm <- function(y = y,
                           x = x,
                           covariable = NULL,

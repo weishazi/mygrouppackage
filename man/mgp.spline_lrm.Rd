@@ -29,3 +29,7 @@ fit
 \description{
 Restricted cubic spline for logistic
 }
+\examples{
+ddist<-datadist(data)
+options(datadist="ddist")
+}

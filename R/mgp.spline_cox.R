@@ -11,6 +11,8 @@
 #' @export
 #'
 #' @examples
+#' ddist<-datadist(data)
+#' options(datadist="ddist")
 mgp.spline_cox <- function(y = y,
                           x = x,
                           covariable = NULL,
