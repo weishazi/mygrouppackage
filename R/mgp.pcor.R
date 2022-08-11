@@ -38,7 +38,7 @@ mgp.pcor <- function(x = x,
   } else {
     # 偏相关分析
     # 整理数据
-    df_temp <- df %>% dplyr::select(c(x, y, cov)) %>% tidyr::drop_na(everything())
+    df_temp <- data %>% dplyr::select(c(x, y, cov)) %>% tidyr::drop_na(everything())
     n <- dim(df_temp)[1]
 
     # 计算相关性
