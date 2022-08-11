@@ -1,4 +1,4 @@
-#' @Title Multinomial Logistic Regression Analysis
+#' @title Multinomial Logistic Regression Analysis
 #'
 #' @param x a character string.
 #' @param y a character string.

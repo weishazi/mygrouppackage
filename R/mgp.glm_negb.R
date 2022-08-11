@@ -1,4 +1,4 @@
-#' @Title Negative Binomial Regression Analysis
+#' @title Negative Binomial Regression Analysis
 #'
 #' @param x a character string.
 #' @param y a character string.

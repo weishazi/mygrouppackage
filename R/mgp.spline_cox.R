@@ -1,4 +1,4 @@
-#' @Title Restricted cubic spline for cox
+#' @title Restricted cubic spline for cox
 #'
 #' @param x a character string.
 #' @param y a character string.
@@ -10,7 +10,7 @@
 #' @return fit
 #' @export
 #'
-#' @examples ddist<-datadist(df_yili_g);/n options(datadist="ddist")
+#' @examples
 mgp.spline_cox <- function(y = y,
                           x = x,
                           covariable = NULL,

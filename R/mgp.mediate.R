@@ -1,4 +1,4 @@
-#' @Title mediation analysis
+#' @title mediation analysis
 #'
 #' @param x a character string.
 #' @param y a character string.
@@ -13,7 +13,10 @@
 #' @return med.list
 #' @export
 #'
-#' @examples setRefClass("PS",fields = list(m="character", x="character",med.f="formula",out.f="formula"));/t para_set <- new("PS")
+#' @examples
+#' setRefClass("PS",fields = list(m="character", x="character",med.f="formula",out.f="formula"))
+#' para_set <- new("PS")
+
 
 # setRefClass("PS",fields = list(m="character", x="character",med.f="formula",out.f="formula"))
 # para_set <- new("PS")

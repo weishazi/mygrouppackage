@@ -1,4 +1,4 @@
-#' @Title Linear Regression Analysis
+#' @title Linear Regression Analysis
 #'
 #' @param x a character string.
 #' @param y a character string.

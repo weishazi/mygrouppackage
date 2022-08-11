@@ -1,9 +1,9 @@
-#' @Title Partial / correlation analysis
+#' @title Partial / correlation analysis
 #'
 #' @param x a character string.
 #' @param y a character string.
 #' @param cov a character string indicating the covariates.
-#' @param df a data.frame.
+#' @param data a data.frame.
 #' @param method "pearson", "kendall", or "spearman".
 #'
 #' @return df_temp

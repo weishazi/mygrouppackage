@@ -1,4 +1,4 @@
-#' @Title Binomial Logistic Regression Analysis
+#' @title Binomial Logistic Regression Analysis
 #'
 #' @param x a character string.
 #' @param y a character string.

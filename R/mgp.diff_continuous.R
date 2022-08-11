@@ -1,4 +1,4 @@
-#' @Title Difference Comparison of Continuous Variables
+#' @title Difference Comparison of Continuous Variables
 #'
 #' @param data a data.frame.
 #' @param variables a character string indicating the categorical variables.

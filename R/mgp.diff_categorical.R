@@ -1,4 +1,4 @@
-#' @Title Difference Comparison of Categorical Variables
+#' @title Difference Comparison of Categorical Variables
 #'
 #' @param data a data.frame.
 #' @param variables a character string indicating the categorical variables.

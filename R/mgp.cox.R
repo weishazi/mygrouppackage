@@ -1,4 +1,4 @@
-#' @Title Cox Proportional Hazard Regression Model
+#' @title Cox Proportional Hazard Regression Model
 #'
 #' @param x a character string.
 #' @param y a character string.

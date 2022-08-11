@@ -1,4 +1,4 @@
-#' @Title Poisson Regression Analysis
+#' @title Poisson Regression Analysis
 #'
 #' @param x a character string.
 #' @param y a character string.

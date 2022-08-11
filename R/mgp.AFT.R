@@ -1,4 +1,4 @@
-#' @Title Accelerated Failure Time Model
+#' @title Accelerated Failure Time Model
 #'
 #' @param x a character string.
 #' @param y a character string.

@@ -1,4 +1,4 @@
-#' @Title Ordinal Logistic Regression Analysis
+#' @title Ordinal Logistic Regression Analysis
 #'
 #' @param x a character string.
 #' @param y a character string.
