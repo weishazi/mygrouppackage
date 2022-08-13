@@ -94,10 +94,10 @@ mgp.mediate <- function(x = x,
 
   ## 结果整理
   med_sum <- summary(med.fit)
-  ACME <- med_sum$d.ave
-  ACME_P <- med_sum$d.ave.p
-  ADE <- med_sum$z.ave
-  ADE_P <- med_sum$z.ave.p
+  ACME <- med_sum$d.avg
+  ACME_P <- med_sum$d.avg.p
+  ADE <- med_sum$z.avg
+  ADE_P <- med_sum$z.avg.p
   TE <- (ACME+ADE)
   Prop_Mediated <- ACME/TE
   med.result <- data.frame('xvar'= x, 'yvar'= y, 'mvar'= m,
